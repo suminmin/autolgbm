@@ -13,7 +13,7 @@ from .enums import ProblemType
 from .utils import fetch_lgbm_model_params, reduce_memory_usage
 
 
-lgbm.set_config(verbosity=0)
+# lgbm.set_config(verbosity=0)
 
 
 @dataclass
