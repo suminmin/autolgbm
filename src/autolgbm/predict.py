@@ -82,7 +82,8 @@ class AutoLGBMPredict:
 
         final_preds = np.mean(final_preds, axis=0)
         if self.target_encoder is None:
-            final_preds = pd.DataFrame(final_preds, columns=self.model_config.target_cols)
+#             final_preds = pd.DataFrame(final_preds, columns=self.model_config.target_cols)
+            final_preds = pd.DataFrame(final_preds, columns=self.model_config.targets)
         else:
             final_preds = pd.DataFrame(final_preds, columns=list(self.target_encoder.classes_))
         final_preds.insert(loc=0, column=self.model_config.idx, value=test_ids)
